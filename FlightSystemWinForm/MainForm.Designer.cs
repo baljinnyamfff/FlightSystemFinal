@@ -41,6 +41,7 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
+            label5 = new Label();
             _logTextBox = new TextBox();
             panel1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
@@ -128,6 +129,7 @@
             // 
             // tableLayoutPanel1
             // 
+            tableLayoutPanel1.BackColor = Color.LightSkyBlue;
             tableLayoutPanel1.ColumnCount = 5;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
@@ -138,6 +140,7 @@
             tableLayoutPanel1.Controls.Add(label1, 0, 0);
             tableLayoutPanel1.Controls.Add(label2, 1, 0);
             tableLayoutPanel1.Controls.Add(label3, 2, 0);
+            tableLayoutPanel1.Controls.Add(label5, 4, 0);
             tableLayoutPanel1.Dock = DockStyle.Top;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Margin = new Padding(6);
@@ -199,6 +202,18 @@
             label3.Text = "Flight Number";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // label5
+            // 
+            label5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
+            label5.Location = new Point(856, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(88, 85);
+            label5.TabIndex = 9;
+            label5.Text = "Seat Assign";
+            label5.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // _logTextBox
             // 
             _logTextBox.Dock = DockStyle.Bottom;
@@ -251,5 +266,6 @@
         private Label label2;
         private Label label3;
         private TextBox _logTextBox;
+        private Label label5;
     }
 }
