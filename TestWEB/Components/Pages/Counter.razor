@@ -1,0 +1,67 @@
+﻿@* @using Microsoft.AspNetCore.SignalR.Client; *@
+@page "/flights"
+@rendermode InteractiveServer
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+
+    private int currentCount = 0;
+
+    // private int renderCount = 0;
+    // private List<FlightDto> flights = new();
+    // private HubConnection hubConnection;
+
+    // protected override async Task OnInitializedAsync()
+    // {
+    //     flights = await Http.GetFromJsonAsync<List<FlightDto>>("http:localhost:5269/api/flights");
+
+    //     hubConnection = new HubConnectionBuilder()
+    //         .WithUrl("http:localhost:5269/flightHub")
+    //         .WithAutomaticReconnect()
+    //         .Build();
+
+    //     hubConnection.Closed += async (err) =>
+    //     {
+    //         await Task.Delay(4000);
+    //         await hubConnection.StartAsync();
+    //     };
+
+    //     hubConnection.On<int, string>("ReceiveFlightStatus", async (flightId, newStatus) =>
+    //     {
+    //         await InvokeAsync(() =>
+    //         {
+    //             Console.WriteLine($"[SignalR] Received: {flightId} => {newStatus}");
+    //             var flight = flights.FirstOrDefault(f => f.Id == flightId);
+    //             if (flight != null)
+    //             {
+    //                 flight.Status = newStatus;
+    //                 flights = flights.ToList();
+    //                 StateHasChanged();
+    //             }
+    //         });
+    //     });
+
+    //     await hubConnection.StartAsync();
+    // }
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+
+    // public class FlightDto
+    // {
+    //     public int Id { get; set; }
+    //     public string FlightNumber { get; set; }
+    //     public string Destination { get; set; }
+    //     public DateTime DepartureTime { get; set; }
+    //     public string Status { get; set; }
+    // }
+}

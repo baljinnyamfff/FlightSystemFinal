@@ -1,0 +1,45 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\TestWEB\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\TestWEB.bundle.scp.css",
+      "PackagePath": "staticwebassets\\TestWEB.91430cvota.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\TestWEB\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\TestWEB\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\TestWEB\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\TestWEB\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.TestWEB.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.TestWEB.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.TestWEB.props",
+      "PackagePath": "build\\TestWEB.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.TestWEB.props",
+      "PackagePath": "buildMultiTargeting\\TestWEB.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.TestWEB.props",
+      "PackagePath": "buildTransitive\\TestWEB.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

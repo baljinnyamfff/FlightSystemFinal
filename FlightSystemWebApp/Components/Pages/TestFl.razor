@@ -1,0 +1,30 @@
+﻿@page "/test"
+@rendermode InteractiveServer
+
+<button @onclick="() => Test()">Test</button>
+<div>Counter: @counter</div>
+<pre>@System.Text.Json.JsonSerializer.Serialize(flights)</pre>
+
+@code {
+    private int counter = 0;
+
+    private List<FlightDto> flights = new()
+    {
+        new FlightDto { Id = 1, Status = "Checking in" }
+    };
+
+    private async Task Test()
+    {
+        counter++;
+        Console.WriteLine("Test called");
+        flights[0].Status = "Boarding";
+        flights = flights.ToList();
+        StateHasChanged(); // optional — Blazor usually does this automatically after event
+    }
+
+    public class FlightDto
+    {
+        public int Id { get; set; }
+        public string Status { get; set; }
+    }
+}

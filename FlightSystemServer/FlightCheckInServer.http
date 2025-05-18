@@ -1,0 +1,6 @@
+@FlightCheckInServer_HostAddress = http://localhost:5269
+
+GET {{FlightCheckInServer_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

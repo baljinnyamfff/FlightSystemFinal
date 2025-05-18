@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "wtAmdf8wsM3cbKxICM69DPmBGroHwfPnFv+N70kpE2U=",
+  "Source": "FlightSystemServer",
+  "BasePath": "_content/FlightSystemServer",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
