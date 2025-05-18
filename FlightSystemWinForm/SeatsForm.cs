@@ -115,32 +115,39 @@ namespace FlightSystemWinForm
 
         private void InitializeSeatGrid()
         {
-            // Create a TableLayoutPanel for the seat grid
+            Controls.Clear(); // дахин initialize хийхэд хуучныг арилгах
+
             var seatGrid = new TableLayoutPanel
             {
                 Dock = DockStyle.Fill,
                 CellBorderStyle = TableLayoutPanelCellBorderStyle.Single,
-                Padding = new Padding(10)
+                Padding = new Padding(10),
+                AutoSize = false
             };
 
-            // Calculate grid size (assuming 6 seats per row)
-            int rows = (int)Math.Ceiling(_seats.Count / 6.0);
+            int seatCount = _seats.Count;
+            int columns = 6;
+            int rows = (int)Math.Ceiling(seatCount / (double)columns);
             seatGrid.RowCount = rows;
-            seatGrid.ColumnCount = 6;
+            seatGrid.ColumnCount = columns;
 
-            // Add seats to the grid
-            for (int i = 0; i < _seats.Count; i++)
+            int gridWidth = this.ClientSize.Width - 20; // padding
+            int gridHeight = this.ClientSize.Height - 70; // padding + legend panel
+
+            int buttonWidth = gridWidth / columns - 4;
+            int buttonHeight = gridHeight / rows - 4;
+
+            for (int i = 0; i < seatCount; i++)
             {
                 var seat = _seats[i];
                 var seatButton = new Button
                 {
                     Text = seat.SeatNumber,
-                    Dock = DockStyle.Fill,
+                    Size = new Size(buttonWidth, buttonHeight),
                     Margin = new Padding(2),
                     Tag = seat.Id
                 };
 
-                // Style the button based on seat status
                 if (seat.IsAssigned)
                 {
                     seatButton.BackColor = Color.LightGray;
@@ -153,13 +160,11 @@ namespace FlightSystemWinForm
                     seatButton.Click += SeatButton_Click;
                 }
 
-                seatGrid.Controls.Add(seatButton, i % 6, i / 6);
+                seatGrid.Controls.Add(seatButton, i % columns, i / columns);
             }
 
-            // Add the grid to the form
             Controls.Add(seatGrid);
 
-            // Add a legend
             var legendPanel = new Panel
             {
                 Dock = DockStyle.Bottom,
