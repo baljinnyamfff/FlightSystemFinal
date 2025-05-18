@@ -29,7 +29,6 @@ namespace FlightSystemWinForm
         {
             InitializeComponent();
             _seats = seats;
-            MessageBox.Show($"{_seats.Count()} seats got");
             _passengerId = passengerId;
             _flightId = flightId;
             _httpClient = httpClient;

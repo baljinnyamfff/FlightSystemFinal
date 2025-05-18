@@ -1,4 +1,5 @@
 ﻿@using Microsoft.AspNetCore.SignalR.Client
+@using FlightSystemDatabase.dto
 @page "/flights"
 @inject HttpClient Http
 @inject ILogger<FlightDto> Logger
@@ -189,15 +190,6 @@
                 Logger.LogError(ex, "Error disposing SignalR connection");
             }
         }
-    }
-
-    public class FlightDto
-    {
-        public int Id { get; set; }
-        public string FlightNumber { get; set; }
-        public string Destination { get; set; }
-        public DateTime DepartureTime { get; set; }
-        public string Status { get; set; }
     }
 
     private string GetStatusBadgeClass(string status) => status switch

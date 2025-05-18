@@ -117,6 +117,7 @@ namespace FlightSystemWinForm
             _passes = await _httpClient.GetFromJsonAsync<List<PassengerDto>>("api/passengers");
             passengerFlowPnl.Controls.Clear();
 
+            //MessageBox.Show($"{_passes.Count()} got");
             foreach (var p in _passes)
             {
                 try
@@ -133,7 +134,6 @@ namespace FlightSystemWinForm
                     {
                         try
                         {
-                            // Load available seats for this flight
                             var response = await _httpClient.GetAsync($"api/flights/{p.FlightId}/seats");
                             if (response.IsSuccessStatusCode)
                             {
@@ -169,7 +169,7 @@ namespace FlightSystemWinForm
                             MessageBox.Show($"Error loading seats: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     };
-
+                    passengerControl.Dock = DockStyle.Top;
                     passengerFlowPnl.Controls.Add(passengerControl);
                 }
                 catch (Exception ex)

@@ -89,7 +89,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-app.Run();
+
 
 using (var scope = app.Services.CreateScope())
 {
@@ -97,30 +97,65 @@ using (var scope = app.Services.CreateScope())
 
     if (!db.Flights.Any())
     {
-        var flight = new Flight
+        var flightList = new List<Flight>();
+        var random = new Random();
+
+        for (int i = 1; i <= 3; i++)
         {
-            FlightNumber = "HK4701",
-            Destination = "Hong-Kong",
-            DepartureTime = DateTime.UtcNow.AddHours(2),
-            Status = FlightStatus.CheckingIn,
-            Seats = new List<Seat>
+            var flight = new Flight
             {
-                new Seat { SeatNumber = "A1", IsAssigned = false },
-                new Seat { SeatNumber = "A2", IsAssigned = false }
+                FlightNumber = $"HK470{i}",
+                Destination = $"City{i}",
+                DepartureTime = DateTime.UtcNow.AddHours(i * 2),
+                Status = FlightStatus.CheckingIn,
+                Seats = new List<Seat>()
+            };
+
+            // Add 20 seats per flight
+            for (int j = 1; j <= 20; j++)
+            {
+                flight.Seats.Add(new Seat
+                {
+                    SeatNumber = $"A{j}",
+                    IsAssigned = false
+                });
             }
-        };
 
-        db.Flights.Add(flight);
+            flightList.Add(flight);
+        }
+
+        db.Flights.AddRange(flightList);
         db.SaveChanges();
 
-        var passenger = new Passenger
+        // Add at least 10 passengers randomly distributed across flights
+        var passengerNames = new[]
         {
-            Name = "John Doe",
-            PassportNumber = "P1234567",
-            FlightId = flight.Id
-        };
+        "John Doe", "Jane Smith", "Alice Brown", "Bob White", "Charlie Black",
+        "Eva Green", "Frank Blue", "Grace Gray", "Henry Yellow", "Isla Red"
+    };
 
-        db.Passengers.Add(passenger);
+        var passengers = new List<Passenger>();
+
+        foreach (var name in passengerNames)
+        {
+            var flight = flightList[random.Next(flightList.Count)];
+
+            passengers.Add(new Passenger
+            {
+                Name = name,
+                PassportNumber = $"P{random.Next(1000000, 9999999)}",
+                FlightId = flight.Id
+            });
+        }
+
+        db.Passengers.AddRange(passengers);
         db.SaveChanges();
+        Console.WriteLine("data initialized");
     }
+    else
+    {
+        Console.WriteLine("Failed");
+    }
+
+    app.Run();
 }

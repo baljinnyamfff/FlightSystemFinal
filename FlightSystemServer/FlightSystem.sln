@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightSystemDatabase", "..\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightSystemService", "..\FlightSystemService\FlightSystemService.csproj", "{AF943147-3958-469C-B555-4ABC0E678346}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWEB", "..\TestWEB\TestWEB.csproj", "{B5968D06-77E0-42CB-A621-1481FD586BB6}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,10 +39,6 @@ Global
 		{AF943147-3958-469C-B555-4ABC0E678346}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF943147-3958-469C-B555-4ABC0E678346}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF943147-3958-469C-B555-4ABC0E678346}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B5968D06-77E0-42CB-A621-1481FD586BB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B5968D06-77E0-42CB-A621-1481FD586BB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B5968D06-77E0-42CB-A621-1481FD586BB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B5968D06-77E0-42CB-A621-1481FD586BB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
