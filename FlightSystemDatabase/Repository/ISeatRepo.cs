@@ -10,6 +10,9 @@ namespace FlightSystemDatabase.Repository
         Task<IEnumerable<Seat>> GetAllAsync();
         Task AddAsync(Seat seat);
         void Update(Seat seat);
+
+        void DeleteByPassengerId(int PassengerId);
+
         void Remove(Seat seat);
         Task SaveChangesAsync();
 
