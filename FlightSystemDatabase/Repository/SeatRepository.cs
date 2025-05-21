@@ -22,6 +22,18 @@ namespace FlightSystemDatabase.Repository
 
         public async Task AddAsync(Seat seat) => await _dbSet.AddAsync(seat);
 
+        public void DeleteByPassengerId(int passengerId)
+        {
+            var seat = _dbSet.FirstOrDefault(s => s.PassengerId == passengerId);
+            if (seat != null)
+            {
+                seat.PassengerId = null;
+                seat.IsAssigned = false;
+                _dbSet.Update(seat);
+            }
+        }
+
+
         public void Update(Seat seat) => _dbSet.Update(seat);
 
         public void Remove(Seat seat) => _dbSet.Remove(seat);

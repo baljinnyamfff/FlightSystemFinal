@@ -33,7 +33,7 @@ public class CheckInService : ICheckInService
         seat.IsAssigned = true;
         seat.PassengerId = passengerId;
         passenger.SeatId = seatId;
-
+        _seatRepo.DeleteByPassengerId(seat.PassengerId.Value);
         _seatRepo.Update(seat);
         _passengerRepo.Update(passenger);
         await _seatRepo.SaveChangesAsync();
