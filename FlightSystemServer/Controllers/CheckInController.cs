@@ -22,8 +22,8 @@ namespace FlightSystemServer.Controllers
             var result = await _checkInService.AssignSeatAsync(passengerId, seatId);
             if (!result) return BadRequest("Seat assignment failed.");
 
-            var socketWorker = HttpContext.RequestServices.GetRequiredService<SocketWorker>();
-            socketWorker.BroadcastToAgents($"Seat {seatId} assigned to passenger {passengerId}");
+            //var socketWorker = HttpContext.RequestServices.GetRequiredService<SocketWorker>();
+            //socketWorker.BroadcastToAgents($"Seat {seatId} assigned to passenger {passengerId}");
 
             return Ok("Seat assigned successfully.");
         }

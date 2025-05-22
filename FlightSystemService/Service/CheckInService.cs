@@ -9,12 +9,15 @@ public class CheckInService : ICheckInService
     private readonly IPassengerRepository _passengerRepo;
     private readonly ISeatRepository _seatRepo;
     private readonly IBoardingPassRepository _boardingPassRepo;
+    private readonly INotificationService _notificationService;
 
     public CheckInService(
         IPassengerRepository passengerRepo,
         ISeatRepository seatRepo,
-        IBoardingPassRepository boardingPassRepo)
+        IBoardingPassRepository boardingPassRepo,
+        INotificationService notificationService)
     {
+        _notificationService = notificationService;
         _passengerRepo = passengerRepo;
         _seatRepo = seatRepo;
         _boardingPassRepo = boardingPassRepo;
@@ -39,6 +42,7 @@ public class CheckInService : ICheckInService
         await _seatRepo.SaveChangesAsync();
         await _passengerRepo.SaveChangesAsync();
 
+        await _notificationService.BroadcastSeatAssignmentAsync(seatId, passengerId);
         return true;
     }
 

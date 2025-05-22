@@ -35,53 +35,11 @@ namespace FlightSystemWinForm
             _socketClient = socketClient;
             _cancellationTokenSource = new CancellationTokenSource();
             InitializeSeatGrid();
-            StartListeningForUpdates();
         }
 
-        private void StartListeningForUpdates()
+        public void UpdateSeatStatus(int seatId, bool isAssigned)
         {
-            if (_socketClient?.Connected == true)
-            {
-                _socketStream = _socketClient.GetStream();
-                _listenTask = Task.Run(async () =>
-                {
-                    var buffer = new byte[1024];
-                    try
-                    {
-                        while (!_cancellationTokenSource.Token.IsCancellationRequested && _socketStream != null)
-                        {
-                            var bytesRead = await _socketStream.ReadAsync(buffer, 0, buffer.Length, _cancellationTokenSource.Token);
-                            if (bytesRead == 0) break;
-
-                            var message = Encoding.UTF8.GetString(buffer, 0, bytesRead);
-                            if (message.StartsWith("SEAT_ASSIGNED:"))
-                            {
-                                var parts = message.Split(':');
-                                if (parts.Length >= 3 && int.TryParse(parts[1], out int seatId))
-                                {
-                                    UpdateSeatStatus(seatId, true);
-                                }
-                            }
-                        }
-                    }
-                    catch (OperationCanceledException)
-                    {
-                        // Normal cancellation, do nothing
-                    }
-                    catch (Exception ex)
-                    {
-                        if (!_cancellationTokenSource.Token.IsCancellationRequested)
-                        {
-                            MessageBox.Show($"Error reading socket updates: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                }, _cancellationTokenSource.Token);
-            }
-        }
-
-        private void UpdateSeatStatus(int seatId, bool isAssigned)
-        {
-            // Find the button for this seat
+            
             foreach (Control control in Controls)
             {
                 if (control is TableLayoutPanel seatGrid)
@@ -92,7 +50,6 @@ namespace FlightSystemWinForm
                             seatButton.Tag is int buttonSeatId &&
                             buttonSeatId == seatId)
                         {
-                            // Update the button appearance
                             seatButton.BackColor = isAssigned ? Color.LightGray : Color.LightGreen;
                             seatButton.Enabled = !isAssigned;
                             seatButton.Text = isAssigned ?
@@ -108,7 +65,7 @@ namespace FlightSystemWinForm
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
-            _listenTask?.Wait(1000); // Wait for the listening task to complete
+            _listenTask?.Wait(1000);
             _socketStream?.Dispose();
             _cancellationTokenSource.Cancel();
         }
@@ -217,6 +174,5 @@ namespace FlightSystemWinForm
                 }
             }
         }
-
     }
 }

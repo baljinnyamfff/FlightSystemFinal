@@ -5,13 +5,13 @@ VisualStudioVersion = 17.13.35919.96
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightSystemServer", "FlightSystemServer.csproj", "{A5A34884-49DE-486C-9306-A8F7F7993691}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightSystemWebApp", "..\FlightSystemWebApp\FlightSystemWebApp.csproj", "{D71128A1-506B-40C0-9FDA-15CA6EA1CBA3}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightSystemWinForm", "..\FlightSystemWinForm\FlightSystemWinForm.csproj", "{30C4A9D1-6E49-4613-95D9-33B24037694F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightSystemDatabase", "..\FlightSystemDatabase\FlightSystemDatabase.csproj", "{29D6AE4D-CCE0-47B7-8A3A-C02A1E816B9E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightSystemService", "..\FlightSystemService\FlightSystemService.csproj", "{AF943147-3958-469C-B555-4ABC0E678346}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightSystemWebAppSA", "..\FlightSystemWebAppSA\FlightSystemWebAppSA.csproj", "{1FA3BCAC-3305-46BB-8617-2266F2E1CA3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,6 @@ Global
 		{A5A34884-49DE-486C-9306-A8F7F7993691}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5A34884-49DE-486C-9306-A8F7F7993691}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5A34884-49DE-486C-9306-A8F7F7993691}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D71128A1-506B-40C0-9FDA-15CA6EA1CBA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D71128A1-506B-40C0-9FDA-15CA6EA1CBA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D71128A1-506B-40C0-9FDA-15CA6EA1CBA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D71128A1-506B-40C0-9FDA-15CA6EA1CBA3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{30C4A9D1-6E49-4613-95D9-33B24037694F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{30C4A9D1-6E49-4613-95D9-33B24037694F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30C4A9D1-6E49-4613-95D9-33B24037694F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{AF943147-3958-469C-B555-4ABC0E678346}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF943147-3958-469C-B555-4ABC0E678346}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF943147-3958-469C-B555-4ABC0E678346}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FA3BCAC-3305-46BB-8617-2266F2E1CA3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FA3BCAC-3305-46BB-8617-2266F2E1CA3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FA3BCAC-3305-46BB-8617-2266F2E1CA3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FA3BCAC-3305-46BB-8617-2266F2E1CA3E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

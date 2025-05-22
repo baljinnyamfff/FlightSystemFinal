@@ -18,7 +18,7 @@ builder.Services.AddDbContext<DataBaseContext>(options =>
 
 builder.Services.AddSignalR(options =>
 {
-    options.MaximumReceiveMessageSize = 102400; // 100 KB
+    options.MaximumReceiveMessageSize = 102400;
 });
 
 builder.Services.AddControllers()
@@ -53,13 +53,13 @@ builder.Services.AddScoped<INotificationService, NotificationService>();
 
 builder.Services.AddCors(options =>
 {
-    options.AddDefaultPolicy(policy =>
+    options.AddPolicy("CorsPolicy", builder =>
     {
-        policy
-            .WithOrigins("https://localhost:7211")
-            .AllowAnyHeader()
+        builder
+            .AllowAnyOrigin()
             .AllowAnyMethod()
-            .AllowCredentials();
+            .AllowAnyHeader();
+
     });
 });
 
@@ -75,7 +75,7 @@ var app = builder.Build();
 
 app.UseRouting();
 
-app.UseCors("AllowAll");
+app.UseCors("CorsPolicy");
 
 app.MapHub<FlightHub>("/flightHub");
 

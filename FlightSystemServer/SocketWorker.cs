@@ -39,7 +39,6 @@ namespace FlightSystemServer
                         _agentClients.Add(client);
                     }
 
-                    // Start a background task to handle client disconnection
                     _ = HandleClientDisconnectionAsync(client, stoppingToken);
                 }
                 catch (Exception ex)
@@ -64,8 +63,6 @@ namespace FlightSystemServer
                         RemoveClient(client);
                         break;
                     }
-
-                    // Wait a bit before checking again
                     await Task.Delay(1000, stoppingToken);
                 }
             }

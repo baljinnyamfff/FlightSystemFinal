@@ -13,6 +13,7 @@ namespace FlightSystemWinForm
         private readonly CancellationTokenSource _cancellationTokenSource;
         private List<FlightDto> _flights;
         private List<PassengerDto> _passes;
+        private SeatsForm? _currentSeatsForm;
 
         public MainForm()
         {
@@ -60,8 +61,6 @@ namespace FlightSystemWinForm
                 _socketClient = new TcpClient();
                 await _socketClient.ConnectAsync("localhost", 6001);
                 _socketStream = _socketClient.GetStream();
-
-                // Start listening for messages
                 _ = ListenForMessagesAsync(_cancellationTokenSource.Token);
                 LogMessage("Connected to socket server");
             }
@@ -84,6 +83,27 @@ namespace FlightSystemWinForm
 
                     var message = Encoding.UTF8.GetString(buffer, 0, bytesRead);
                     LogMessage($"Received: {message}");
+
+                    //message fomrat: "Seat {seatId} assigned to passenger {passengerId}"
+                    if (message.StartsWith("Seat ") && message.Contains(" assigned to passenger "))
+                    {
+                        try
+                        {
+                            var parts = message.Split(new[] { "Seat ", " assigned to passenger " }, StringSplitOptions.RemoveEmptyEntries);
+                            if (parts.Length == 2 && int.TryParse(parts[0], out int seatId))
+                            {
+                                // if form is open
+                                if (_currentSeatsForm != null && !_currentSeatsForm.IsDisposed)
+                                {
+                                    _currentSeatsForm.UpdateSeatStatus(seatId, true);
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            LogMessage($"Error parsing seat assignment message: {ex.Message}");
+                        }
+                    }
                 }
             }
             catch (OperationCanceledException)
@@ -94,7 +114,6 @@ namespace FlightSystemWinForm
                 if (!cancellationToken.IsCancellationRequested)
                 {
                     LogMessage($"Error reading from socket: {ex.Message}");
-                    // Try to reconnectt
                     await Task.Delay(5000, cancellationToken);
                     await ConnectToSocketServer();
                 }
@@ -103,12 +122,12 @@ namespace FlightSystemWinForm
 
         private void LogMessage(string message)
         {
-            if (InvokeRequired)
-            {
-                Invoke(new Action(() => LogMessage(message)));
-                return;
-            }
-            _logTextBox.AppendText($"{DateTime.Now:HH:mm:ss} - {message}");
+            //if (InvokeRequired)
+            //{
+            //    Invoke(new Action(() => LogMessage(message)));
+            //    return;
+            //}
+            //_logTextBox.AppendText($"{DateTime.Now:ss} - {message}");
         }
 
 
@@ -148,11 +167,14 @@ namespace FlightSystemWinForm
                                 if (seats != null && _socketClient != null)
                                 {
                                     using var dialog = new SeatsForm(seats, p.Id, p.FlightId, _httpClient, _socketClient);
+                                    _currentSeatsForm = dialog;
+
                                     if (dialog.ShowDialog() == DialogResult.OK)
                                     {
-                                        // Refresh the passenger list to show the new seat assignment
                                         await LoadPassengersAsync();
                                     }
+                                    _currentSeatsForm = null;
+                                    dialog.Dispose();
                                 }
                                 else
                                 {

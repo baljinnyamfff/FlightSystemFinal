@@ -1,0 +1,196 @@
+﻿@using Microsoft.AspNetCore.SignalR.Client
+@using FlightSystemDatabase.dto
+@page "/flights"
+@inject HttpClient Http
+@inject ILogger<FlightDto> Logger
+
+<div class="container mt-5">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h3 class="mb-0">Flight Information</h3>
+        </div>
+        <div class="card-body">
+            @if (flights == null)
+            {
+                <div class="text-center text-muted">
+                    <em>Loading flight data...</em>
+                </div>
+            }
+            else if (flights.Count == 0)
+            {
+                <div class="alert alert-warning text-center">No flights available.</div>
+            }
+            else
+            {
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle text-center">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Flight Number</th>
+                                <th>Destination</th>
+                                <th>Departure Time</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var flight in flights)
+                            {
+                                <tr @key="flight.Id">
+                                    <td><strong>@flight.FlightNumber</strong></td>
+                                    <td>@flight.Destination</td>
+                                    <td>@flight.DepartureTime.ToLocalTime().ToString("g")</td>
+                                    <td>
+                                        <span class="badge @GetStatusBadgeClass(flight.Status)">
+                                            @flight.Status
+                                        </span>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+                <button @onclick="Test" class="btn btn-warning mt-3">Test Status Change</button>
+            }
+        </div>
+        <div class="card-footer">
+            <button @onclick="ConnectToHub" class="btn btn-primary" disabled="@IsConnected">
+                @(IsConnected ? "Connected" : "Connect to Hub")
+            </button>
+        </div>
+    </div>
+</div>
+
+@code {
+    private int renderCount = 0;
+    private List<FlightDto> flights = new();
+    private HubConnection hubConnection;
+    private bool IsConnected => hubConnection?.State == HubConnectionState.Connected;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            flights = await Http.GetFromJsonAsync<List<FlightDto>>("https://localhost:7166/api/flights")
+                ?? new List<FlightDto>();
+            Logger.LogInformation("Successfully loaded {Count} flights", flights.Count);
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Error loading flights");
+            flights = new List<FlightDto>();
+        }
+
+        await ConnectToHub();
+    }
+
+    private async Task ConnectToHub()
+    {
+        try
+        {
+            // Dispose existing connection if any
+            if (hubConnection != null)
+            {
+                await hubConnection.DisposeAsync();
+            }
+
+            hubConnection = new HubConnectionBuilder()
+                .WithUrl("https://localhost:7166/flightHub", options =>
+                {
+                    options.SkipNegotiation = true;
+                    options.Transports = Microsoft.AspNetCore.Http.Connections.HttpTransportType.WebSockets;
+                    options.Headers.Add("Access-Control-Allow-Origin", "*");
+                })
+                .WithAutomaticReconnect(new[] { TimeSpan.Zero, TimeSpan.FromSeconds(2), TimeSpan.FromSeconds(5), TimeSpan.FromSeconds(10) })
+                .ConfigureLogging(logging =>
+                {
+                    logging.SetMinimumLevel(LogLevel.Information);
+                })
+                .Build();
+
+            hubConnection.Closed += async (error) =>
+            {
+                if (error != null)
+                {
+                    Logger.LogError(error, "SignalR connection closed with error");
+                }
+                else
+                {
+                    Logger.LogWarning("SignalR connection closed");
+                }
+
+                await InvokeAsync(StateHasChanged);
+            };
+
+            hubConnection.Reconnecting += (error) =>
+            {
+                Logger.LogWarning(error, "SignalR attempting to reconnect");
+                return Task.CompletedTask;
+            };
+
+            hubConnection.Reconnected += (connectionId) =>
+            {
+                Logger.LogInformation("SignalR reconnected with ID: {ConnectionId}", connectionId);
+                return Task.CompletedTask;
+            };
+
+            // Register for flight status updates
+            hubConnection.On<string, string>("ReceiveFlightStatus", (flight, status) =>
+            {
+                Console.WriteLine($"Received terminal flight status: {flight} - {status}");
+                var existingFlight = flights.FirstOrDefault(f => f.FlightNumber == flight);
+                if (existingFlight != null)
+                {
+                    existingFlight.Status = status;
+                }
+                InvokeAsync(StateHasChanged);
+            });
+
+            await hubConnection.StartAsync();
+            Logger.LogInformation("SignalR connection started successfully");
+            await InvokeAsync(StateHasChanged);
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Failed to connect to SignalR hub");
+            await InvokeAsync(StateHasChanged);
+        }
+    }
+
+    private async Task Test()
+    {
+        if (flights is { Count: > 0 })
+        {
+            var flight = flights.First();
+            flight.Status = "Boarding";
+            Logger.LogInformation("Local test: Changed status of Flight {FlightId} to Boarding", flight.Id);
+            await InvokeAsync(StateHasChanged);
+        }
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        if (hubConnection != null)
+        {
+            try
+            {
+                await hubConnection.DisposeAsync();
+                Logger.LogInformation("SignalR connection disposed");
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex, "Error disposing SignalR connection");
+            }
+        }
+    }
+
+    private string GetStatusBadgeClass(string status) => status switch
+    {
+        "Checking in" => "bg-info",
+        "Boarding" => "bg-warning text-dark",
+        "Departed" => "bg-success",
+        "Delayed" => "bg-danger",
+        "Cancelled" => "bg-secondary",
+        _ => "bg-light text-dark"
+    };
+}

@@ -22,10 +22,10 @@ namespace FlightSystemService.Service
             _socketWorker.BroadcastToAgents($"Seat {seatId} assigned to passenger {passengerId}");
         }
 
-        public async Task BroadcastFlightStatusAsync(int flightId, string status)
+        public async Task BroadcastFlightStatusAsync(string fNumber, string status)
         {
             // Broadcast to display screens via SignalR
-            await _hubContext.Clients.All.SendAsync("ReceiveFlightStatus", flightId, status);
+            await _hubContext.Clients.All.SendAsync("ReceiveFlightStatus", fNumber, status);
         }
     }
 }

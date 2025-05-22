@@ -21,10 +21,10 @@ namespace FlightSystemService.SignalRHub
             await base.OnDisconnectedAsync(exception);
         }
 
-        public async Task SendFlightStatus(int flightId, string status)
+        public async Task SendFlightStatus(string fNumber, string status)
         {
-            Console.WriteLine($"Broadcasting status update in flightHub.cs: {flightId} -> {status}");
-            await Clients.All.SendAsync("ReceiveFlightStatus", flightId, status);
+            Console.WriteLine($"Broadcasting status update in flightHub.cs: {fNumber} -> {status}");
+            await Clients.All.SendAsync("ReceiveFlightStatus", fNumber, status);
         }
     }
 }
