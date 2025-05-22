@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FlightSystemWinForm")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+062bc743b20a853b2e14cdf3abf880aa4ab81540")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+884c32739b6dfb00624949e8c0d78798bb9360a8")]
 [assembly: System.Reflection.AssemblyProductAttribute("FlightSystemWinForm")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FlightSystemWinForm")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

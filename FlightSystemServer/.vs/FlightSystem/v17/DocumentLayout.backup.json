@@ -3,6 +3,9 @@
   "WorkspaceRootPath": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemServer\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{30C4A9D1-6E49-4613-95D9-33B24037694F}|..\\FlightSystemWinForm\\FlightSystemWinForm.csproj|c:\\users\\baljinnyam\\source\\repos\\flightsystem\\flightsystemwinform\\seatsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A5A34884-49DE-486C-9306-A8F7F7993691}|FlightSystemServer.csproj|c:\\users\\baljinnyam\\source\\repos\\flightsystem\\flightsystemserver\\socketworker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A5A34884-49DE-486C-9306-A8F7F7993691}|FlightSystemServer.csproj|solutionrelative:socketworker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -12,9 +15,6 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{30C4A9D1-6E49-4613-95D9-33B24037694F}|..\\FlightSystemWinForm\\FlightSystemWinForm.csproj|c:\\users\\baljinnyam\\source\\repos\\flightsystem\\flightsystemwinform\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{30C4A9D1-6E49-4613-95D9-33B24037694F}|..\\FlightSystemWinForm\\FlightSystemWinForm.csproj|c:\\users\\baljinnyam\\source\\repos\\flightsystem\\flightsystemwinform\\seatsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -24,11 +24,11 @@
       "DocumentGroups": [
         {
           "DockedHeight": 254,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "MainForm.cs",
               "DocumentMoniker": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemWinForm\\MainForm.cs",
               "RelativeDocumentMoniker": "..\\FlightSystemWinForm\\MainForm.cs",
@@ -37,51 +37,7 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-18T06:49:12.791Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemServer\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemServer\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAKAAAAAAAAAAAAAAAAEAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T06:22:23.133Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SocketWorker.cs",
-              "DocumentMoniker": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemServer\\SocketWorker.cs",
-              "RelativeDocumentMoniker": "SocketWorker.cs",
-              "ToolTip": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemServer\\SocketWorker.cs",
-              "RelativeToolTip": "SocketWorker.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T06:04:19.481Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SeatsForm.cs",
-              "DocumentMoniker": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemWinForm\\SeatsForm.cs",
-              "RelativeDocumentMoniker": "..\\FlightSystemWinForm\\SeatsForm.cs",
-              "ToolTip": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemWinForm\\SeatsForm.cs",
-              "RelativeToolTip": "..\\FlightSystemWinForm\\SeatsForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T06:01:58.898Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -122,6 +78,48 @@
             {
               "$type": "Bookmark",
               "Name": "ST:4:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemServer\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemServer\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAKAAAAAAAAAAAAAAAAEAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T06:22:23.133Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SocketWorker.cs",
+              "DocumentMoniker": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemServer\\SocketWorker.cs",
+              "RelativeDocumentMoniker": "SocketWorker.cs",
+              "ToolTip": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemServer\\SocketWorker.cs",
+              "RelativeToolTip": "SocketWorker.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T06:04:19.481Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SeatsForm.cs",
+              "DocumentMoniker": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemWinForm\\SeatsForm.cs",
+              "RelativeDocumentMoniker": "..\\FlightSystemWinForm\\SeatsForm.cs",
+              "ToolTip": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemWinForm\\SeatsForm.cs",
+              "RelativeToolTip": "..\\FlightSystemWinForm\\SeatsForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T06:01:58.898Z",
+              "EditorCaption": ""
             }
           ]
         },

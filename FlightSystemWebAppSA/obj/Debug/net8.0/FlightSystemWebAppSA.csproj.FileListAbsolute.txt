@@ -1141,8 +1141,6 @@ C:\Users\Baljinnyam\source\repos\FlightSystem\FlightSystemWebAppSA\obj\Debug\net
 C:\Users\Baljinnyam\source\repos\FlightSystem\FlightSystemWebAppSA\obj\Debug\net8.0\compressed\lwxmdch2pg-tptq2av103.gz
 C:\Users\Baljinnyam\source\repos\FlightSystem\FlightSystemWebAppSA\obj\Debug\net8.0\compressed\myigdly22h-lfu7j35m59.gz
 C:\Users\Baljinnyam\source\repos\FlightSystem\FlightSystemWebAppSA\obj\Debug\net8.0\compressed\i3w7khkzvg-oyz0vx2fzb.gz
-C:\Users\Baljinnyam\source\repos\FlightSystem\FlightSystemWebAppSA\obj\Debug\net8.0\compressed\rstg9p679u-dcq60b44el.gz
-C:\Users\Baljinnyam\source\repos\FlightSystem\FlightSystemWebAppSA\obj\Debug\net8.0\compressed\bcnf8dbbp8-kdyuivj6rt.gz
 C:\Users\Baljinnyam\source\repos\FlightSystem\FlightSystemWebAppSA\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Baljinnyam\source\repos\FlightSystem\FlightSystemWebAppSA\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\Baljinnyam\source\repos\FlightSystem\FlightSystemWebAppSA\obj\Debug\net8.0\staticwebassets.build.endpoints.json
@@ -1158,6 +1156,8 @@ C:\Users\Baljinnyam\source\repos\FlightSystem\FlightSystemWebAppSA\obj\Debug\net
 C:\Users\Baljinnyam\source\repos\FlightSystem\FlightSystemWebAppSA\obj\Debug\net8.0\refint\FlightSystemWebAppSA.dll
 C:\Users\Baljinnyam\source\repos\FlightSystem\FlightSystemWebAppSA\obj\Debug\net8.0\FlightSystemWebAppSA.pdb
 C:\Users\Baljinnyam\source\repos\FlightSystem\FlightSystemWebAppSA\obj\Debug\net8.0\ref\FlightSystemWebAppSA.dll
-C:\Users\Baljinnyam\source\repos\FlightSystem\FlightSystemWebAppSA\obj\Debug\net8.0\compressed\ouvjsxax01-gzwtsx1czw.gz
-C:\Users\Baljinnyam\source\repos\FlightSystem\FlightSystemWebAppSA\obj\Debug\net8.0\compressed\8i2ge1lp5s-njhdc2gx99.gz
-C:\Users\Baljinnyam\source\repos\FlightSystem\FlightSystemWebAppSA\obj\Debug\net8.0\compressed\e4889bj2ya-1hm6lcsc08.gz
+C:\Users\Baljinnyam\source\repos\FlightSystem\FlightSystemWebAppSA\obj\Debug\net8.0\compressed\rstg9p679u-lr3jhvcex2.gz
+C:\Users\Baljinnyam\source\repos\FlightSystem\FlightSystemWebAppSA\obj\Debug\net8.0\compressed\bcnf8dbbp8-i1h1ykeewr.gz
+C:\Users\Baljinnyam\source\repos\FlightSystem\FlightSystemWebAppSA\obj\Debug\net8.0\compressed\ouvjsxax01-1bk73l7dgm.gz
+C:\Users\Baljinnyam\source\repos\FlightSystem\FlightSystemWebAppSA\obj\Debug\net8.0\compressed\8i2ge1lp5s-0tjql4gmuk.gz
+C:\Users\Baljinnyam\source\repos\FlightSystem\FlightSystemWebAppSA\obj\Debug\net8.0\compressed\e4889bj2ya-j667zownl4.gz
