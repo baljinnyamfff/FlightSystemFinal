@@ -1,10 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="flightEntity.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="FlightPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="passengerEntity.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="PassengerPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="SeatsForm.cs">

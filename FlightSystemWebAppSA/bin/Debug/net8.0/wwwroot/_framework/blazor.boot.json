@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "FlightSystemWebAppSA",
   "resources": {
-    "hash": "sha256-Fzuzoj7zIrry2EwmTJPpUSQGGQELyWpmHizLvfILgdo=",
+    "hash": "sha256-3v6rMViKiM28ZTs3Peey0mYz3mNDYguaMlhMtTHM+xU=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-DTUQS6Jc6BNnS7sYYezFfaUKVmQq0/lanhQuJfygH/k="
     },
@@ -231,12 +231,12 @@
       "mscorlib.wasm": "sha256-8L4O6tiH48gEZfzf0Y84J01S+3eEG59Bo5bfpH2H+9Y=",
       "netstandard.wasm": "sha256-sEvS/ZjfGhf1dLglmk72ysM50loOygjujJ/J5OhFLEw=",
       "System.Private.CoreLib.wasm": "sha256-BhHYDTpkph+YJOQuAlv6aSrvjTVX0WLTIDBXecinFXo=",
-      "FlightSystemDatabase.wasm": "sha256-0WbgBWUZ5oJvLVMB6OSAmkFIsNWOPoNMvYyf7u9pV7s=",
-      "FlightSystemWebAppSA.wasm": "sha256-jWlsijSHHFxduXV1Nt+wVIWc/jEhrAMdrng4whH89ik="
+      "FlightSystemDatabase.wasm": "sha256-68QrX0wMCUQBKAi4kVZ0cemp1gfRhdDffge9blWBQ0I=",
+      "FlightSystemWebAppSA.wasm": "sha256-t/zX7eKoEWXrgfChcL3uYobRTB87iNoRqoGPJFUKqRQ="
     },
     "pdb": {
-      "FlightSystemDatabase.pdb": "sha256-emFMed8y/gKI2lfTHXOjlt8XhqkqnCPAjPAVhsBohnU=",
-      "FlightSystemWebAppSA.pdb": "sha256-xCsQoibqwyskqusDuNWLy7MWAeNIji0nJ4ngn0JrtR4="
+      "FlightSystemDatabase.pdb": "sha256-5s81UZUUfFLpX98InQeTo8VxAK21MNVowCjqdPvGhNw=",
+      "FlightSystemWebAppSA.pdb": "sha256-5pQ9K0agahkEy8W0QdENenCmIBWdOK7f7VtYzLrV8Ro="
     }
   },
   "cacheBootResources": true,

@@ -152,3 +152,6 @@ C:\Users\nomin\Downloads\flightSystem\FlightSystem\FlightSystemWinForm\obj\Debug
 C:\Users\nomin\Downloads\flightSystem\FlightSystem\FlightSystemWinForm\obj\Debug\net8.0-windows\FlightSystemWinForm.pdb
 C:\Users\nomin\Downloads\flightSystem\FlightSystem\FlightSystemWinForm\obj\Debug\net8.0-windows\FlightSystemWinForm.genruntimeconfig.cache
 C:\Users\nomin\Downloads\flightSystem\FlightSystem\FlightSystemWinForm\obj\Debug\net8.0-windows\ref\FlightSystemWinForm.dll
+C:\Users\Baljinnyam\source\repos\FlightSystem\FlightSystemWinForm\obj\Debug\net8.0-windows\FlightSystemWinForm.FlightPage.resources
+C:\Users\Baljinnyam\source\repos\FlightSystem\FlightSystemWinForm\obj\Debug\net8.0-windows\FlightSystemWinForm.PassengerPage.resources
+C:\Users\Baljinnyam\source\repos\FlightSystem\FlightSystemWinForm\obj\Debug\net8.0-windows\FlightSystemWinForm.flightEntity.resources

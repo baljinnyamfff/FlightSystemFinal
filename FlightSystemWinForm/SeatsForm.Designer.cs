@@ -32,10 +32,10 @@
             // 
             // SeatsForm
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1329, 1298);
-            Margin = new Padding(6);
+            ClientSize = new Size(716, 413);
+            MinimizeBox = false;
             Name = "SeatsForm";
             Text = "SeatsForm";
             ResumeLayout(false);

@@ -39,8 +39,6 @@ namespace FlightSystemWinForm
             get => seatNumLbl.Text;
             set => seatNumLbl.Text = value;
         }
-
-        // Optionally expose the button for external use (event hookup)
         public Button ChooseSeatButton => chooseSeatBtn;
     }
 }
