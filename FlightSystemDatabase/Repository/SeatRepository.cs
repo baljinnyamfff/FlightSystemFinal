@@ -32,8 +32,6 @@ namespace FlightSystemDatabase.Repository
                 _dbSet.Update(seat);
             }
         }
-
-
         public void Update(Seat seat) => _dbSet.Update(seat);
 
         public void Remove(Seat seat) => _dbSet.Remove(seat);

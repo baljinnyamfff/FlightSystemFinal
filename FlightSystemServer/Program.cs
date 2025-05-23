@@ -45,12 +45,6 @@ builder.Services.AddScoped<IBoardingPassService, BoardingPassService>();
 builder.Services.AddScoped<INotificationService, NotificationService>();
 
 
-//builder.Services.AddControllers()
-//    .AddJsonOptions(options =>
-//    {
-//        options.JsonSerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter());
-//    });
-
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("CorsPolicy", builder =>
@@ -111,7 +105,6 @@ using (var scope = app.Services.CreateScope())
                 Seats = new List<Seat>()
             };
 
-            // Add 20 seats per flight
             for (int j = 1; j <= 20; j++)
             {
                 flight.Seats.Add(new Seat
@@ -127,7 +120,6 @@ using (var scope = app.Services.CreateScope())
         db.Flights.AddRange(flightList);
         db.SaveChanges();
 
-        // Add at least 10 passengers randomly distributed across flights
         var passengerNames = new[]
         {
         "John Doe", "Jane Smith", "Alice Brown", "Bob White", "Charlie Black",

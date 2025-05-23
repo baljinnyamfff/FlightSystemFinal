@@ -228,7 +228,6 @@
             Controls.Add(changeStatusBtn);
             Name = "MainForm";
             Text = "Form1";
-            Load += MainForm_Load;
             panel1.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();

@@ -19,21 +19,15 @@ namespace FlightSystemWinForm
         private readonly int _passengerId;
         private readonly int _flightId;
         private readonly HttpClient _httpClient;
-        private readonly TcpClient _socketClient;
-        private NetworkStream? _socketStream;
-        private Task? _listenTask;
-        private readonly CancellationTokenSource _cancellationTokenSource;
         public int? SelectedSeatId { get; private set; }
 
-        public SeatsForm(List<SeatDto> seats, int passengerId, int flightId, HttpClient httpClient, TcpClient socketClient)
+        public SeatsForm(List<SeatDto> seats, int passengerId, int flightId, HttpClient httpClient)
         {
             InitializeComponent();
             _seats = seats;
             _passengerId = passengerId;
             _flightId = flightId;
             _httpClient = httpClient;
-            _socketClient = socketClient;
-            _cancellationTokenSource = new CancellationTokenSource();
             InitializeSeatGrid();
         }
 
@@ -65,9 +59,6 @@ namespace FlightSystemWinForm
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
-            _listenTask?.Wait(1000);
-            _socketStream?.Dispose();
-            _cancellationTokenSource.Cancel();
         }
 
         private void InitializeSeatGrid()

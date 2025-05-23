@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.SignalR;
 using FlightSystemService.SignalRHub;
+using FlightSystemDatabase.Model;
 
 namespace FlightSystemService.Service
 {
@@ -18,10 +19,12 @@ namespace FlightSystemService.Service
 
         public async Task BroadcastSeatAssignmentAsync(int seatId, int passengerId)
         {
-            // Broadcast to agents via socket
-            _socketWorker.BroadcastToAgents($"Seat {seatId} assigned to passenger {passengerId}");
+            _socketWorker.BroadcastToAgents($"SEAT_ASSIGNED|{seatId}\n");
         }
-
+        public async Task BroadcastFlightStatusSocketAsync(string fNumber, string status)
+        {
+            _socketWorker.BroadcastToAgents($"FLIGHT_STATUS|{fNumber}|{status}\n");
+        }
         public async Task BroadcastFlightStatusAsync(string fNumber, string status)
         {
             // Broadcast to display screens via SignalR

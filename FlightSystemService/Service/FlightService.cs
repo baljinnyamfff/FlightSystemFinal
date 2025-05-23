@@ -46,6 +46,7 @@ namespace FlightSystemService.Service
             _flightRepo.Update(flight);
             await _flightRepo.SaveChangesAsync();
 
+            await _notificationService.BroadcastFlightStatusSocketAsync(flight.FlightNumber, newStatus.ToString());
             await _notificationService.BroadcastFlightStatusAsync(flight.FlightNumber, newStatus.ToString());
 
             return true;

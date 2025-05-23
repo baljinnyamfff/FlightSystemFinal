@@ -1,3 +1,6 @@
+//using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
+
 namespace FlightSystemWinForm
 {
     internal static class Program
@@ -8,10 +11,22 @@ namespace FlightSystemWinForm
         [STAThread]
         static void Main()
         {
+
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new MainForm());
+            var services = new ServiceCollection();
+            ConfigureServices(services);
+
+            using var serviceProvider = services.BuildServiceProvider();
+            var mainForm = serviceProvider.GetRequiredService<MainForm>();
+            Application.Run(mainForm);
+            //Application.Run(new MainForm());
+        }
+        private static void ConfigureServices(ServiceCollection services)
+        {
+            services.AddSingleton<SocketClientWorker>();
+            services.AddSingleton<MainForm>();
         }
     }
 }

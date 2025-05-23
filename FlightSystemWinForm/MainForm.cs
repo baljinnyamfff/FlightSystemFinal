@@ -8,32 +8,25 @@ namespace FlightSystemWinForm
     public partial class MainForm : Form
     {
         private readonly HttpClient _httpClient = new HttpClient { BaseAddress = new Uri("https://localhost:7166/") };
-        private TcpClient? _socketClient;
-        private NetworkStream? _socketStream;
-        private readonly CancellationTokenSource _cancellationTokenSource;
+        private readonly SocketClientWorker _socketWorker;
         private List<FlightDto> _flights;
         private List<PassengerDto> _passes;
         private SeatsForm? _currentSeatsForm;
 
-        public MainForm()
+        public MainForm(SocketClientWorker socketClient)
         {
             InitializeComponent();
-            Load += MainForm_Load;
-            _cancellationTokenSource = new CancellationTokenSource();
-            _logTextBox.Height = 60;
+            _socketWorker = socketClient;
+            _socketWorker.OnSeatReceived += HandleSeatAssignSocket;
+            _socketWorker.OnFlightReceived += HandleFLightStatusSocket;
+            _logTextBox.Height = 20;
             flightStatusComboBox.Items.AddRange(new[] { "CheckingIn", "Boarding", "Departed", "Delayed", "Cancelled" });
-        }
-
-        private async void MainForm_Load(object sender, EventArgs e)
-        {
-            await LoadPassengersAsync();
-            await LoadFlightsAsync();
         }
 
         protected override async void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            await ConnectToSocketServer();
+            await _socketWorker.ConnectAsync("localhost", 6001);
             await LoadPassengersAsync();
             await LoadFlightsAsync();
         }
@@ -41,82 +34,19 @@ namespace FlightSystemWinForm
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
-            _cancellationTokenSource.Cancel();
-            _socketStream?.Dispose();
-            _socketClient?.Dispose();
-            _cancellationTokenSource.Dispose();
+            _socketWorker.Dispose();
         }
-
-        private async Task ConnectToSocketServer()
+        private void HandleFLightStatusSocket(string flightNumber,  string newStatus)
         {
-            try
-            {
-                if (_socketClient?.Connected == true)
-                {
-                    return;
-                }
-
-                _socketClient?.Dispose();
-
-                _socketClient = new TcpClient();
-                await _socketClient.ConnectAsync("localhost", 6001);
-                _socketStream = _socketClient.GetStream();
-                _ = ListenForMessagesAsync(_cancellationTokenSource.Token);
-                LogMessage("Connected to socket server");
-            }
-            catch (Exception ex)
-            {
-                LogMessage($"Error connecting to socket server: {ex.Message}");
-                MessageBox.Show($"Error connecting to socket server: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            LogMessage("got flight status");
         }
-
-        private async Task ListenForMessagesAsync(CancellationToken cancellationToken)
+        private void HandleSeatAssignSocket(int seatId)
         {
-            var buffer = new byte[1024];
-            try
+            LogMessage("Got seat socket message");
+            if (_currentSeatsForm != null && !_currentSeatsForm.IsDisposed)
             {
-                while (!cancellationToken.IsCancellationRequested && _socketStream != null)
-                {
-                    var bytesRead = await _socketStream.ReadAsync(buffer, 0, buffer.Length, cancellationToken);
-                    if (bytesRead == 0) break;
-
-                    var message = Encoding.UTF8.GetString(buffer, 0, bytesRead);
-                    LogMessage($"Received: {message}");
-
-                    //message fomrat: "Seat {seatId} assigned to passenger {passengerId}"
-                    if (message.StartsWith("Seat ") && message.Contains(" assigned to passenger "))
-                    {
-                        try
-                        {
-                            var parts = message.Split(new[] { "Seat ", " assigned to passenger " }, StringSplitOptions.RemoveEmptyEntries);
-                            if (parts.Length == 2 && int.TryParse(parts[0], out int seatId))
-                            {
-                                // if form is open
-                                if (_currentSeatsForm != null && !_currentSeatsForm.IsDisposed)
-                                {
-                                    _currentSeatsForm.UpdateSeatStatus(seatId, true);
-                                }
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            LogMessage($"Error parsing seat assignment message: {ex.Message}");
-                        }
-                    }
-                }
-            }
-            catch (OperationCanceledException)
-            {
-            }
-            catch (Exception ex)
-            {
-                if (!cancellationToken.IsCancellationRequested)
-                {
-                    LogMessage($"Error reading from socket: {ex.Message}");
-                    await Task.Delay(5000, cancellationToken);
-                    await ConnectToSocketServer();
-                }
+                LogMessage("update seat called");
+                _currentSeatsForm.UpdateSeatStatus(seatId, true);
             }
         }
 
@@ -164,9 +94,9 @@ namespace FlightSystemWinForm
                                 }
 
                                 var seats = await response.Content.ReadFromJsonAsync<List<SeatDto>>();
-                                if (seats != null && _socketClient != null)
+                                if (seats != null && _socketWorker != null)
                                 {
-                                    using var dialog = new SeatsForm(seats, p.Id, p.FlightId, _httpClient, _socketClient);
+                                    using var dialog = new SeatsForm(seats, p.Id, p.FlightId, _httpClient);
                                     _currentSeatsForm = dialog;
 
                                     if (dialog.ShowDialog() == DialogResult.OK)
