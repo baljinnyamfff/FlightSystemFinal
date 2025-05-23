@@ -11,7 +11,7 @@ namespace FlightSystemDatabase.dto
         public int PassengerId { get; set; }
 
         [JsonPropertyName("seatId")]
-        public int SeatId { get; set; }
+        public int? SeatId { get; set; }
 
         [JsonPropertyName("flightId")]
         public int FlightId { get; set; }

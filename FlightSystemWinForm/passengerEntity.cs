@@ -40,5 +40,6 @@ namespace FlightSystemWinForm
             set => seatNumLbl.Text = value;
         }
         public Button ChooseSeatButton => chooseSeatBtn;
+        public Button PrintBoardingPassBtn => printBtn;
     }
 }

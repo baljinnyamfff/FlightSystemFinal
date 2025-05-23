@@ -9,7 +9,6 @@ namespace FlightSystemDatabase.dto
         {
             return new FlightDto
             {
-                Id = flight.Id,
                 FlightNumber = flight.FlightNumber,
                 Destination = flight.Destination,
                 DepartureTime = flight.DepartureTime,

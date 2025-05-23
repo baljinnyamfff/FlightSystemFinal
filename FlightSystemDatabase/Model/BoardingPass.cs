@@ -6,7 +6,7 @@ namespace FlightSystemDatabase.Model
     {
         public int Id { get; set; }
         public int PassengerId { get; set; }
-        public int SeatId { get; set; }
+        public int? SeatId { get; set; }
         public int FlightId { get; set; }
         public DateTime IssuedAt { get; set; }
         public Passenger Passenger { get; set; }

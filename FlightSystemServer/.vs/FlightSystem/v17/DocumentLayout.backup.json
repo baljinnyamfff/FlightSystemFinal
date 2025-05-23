@@ -6,43 +6,24 @@
       "AbsoluteMoniker": "D:0:0:{30C4A9D1-6E49-4613-95D9-33B24037694F}|..\\FlightSystemWinForm\\FlightSystemWinForm.csproj|c:\\users\\baljinnyam\\source\\repos\\flightsystem\\flightsystemwinform\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{30C4A9D1-6E49-4613-95D9-33B24037694F}|..\\FlightSystemWinForm\\FlightSystemWinForm.csproj|c:\\users\\baljinnyam\\source\\repos\\flightsystem\\flightsystemwinform\\passengerentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A5A34884-49DE-486C-9306-A8F7F7993691}|FlightSystemServer.csproj|c:\\users\\baljinnyam\\source\\repos\\flightsystem\\flightsystemserver\\controllers\\checkincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5A34884-49DE-486C-9306-A8F7F7993691}|FlightSystemServer.csproj|solutionrelative:controllers\\checkincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{30C4A9D1-6E49-4613-95D9-33B24037694F}|..\\FlightSystemWinForm\\FlightSystemWinForm.csproj|c:\\users\\baljinnyam\\source\\repos\\flightsystem\\flightsystemwinform\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{AF943147-3958-469C-B555-4ABC0E678346}|..\\FlightSystemService\\FlightSystemService.csproj|c:\\users\\baljinnyam\\source\\repos\\flightsystem\\flightsystemservice\\service\\boardingpassservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{30C4A9D1-6E49-4613-95D9-33B24037694F}|..\\FlightSystemWinForm\\FlightSystemWinForm.csproj|c:\\users\\baljinnyam\\source\\repos\\flightsystem\\flightsystemwinform\\flightentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A5A34884-49DE-486C-9306-A8F7F7993691}|FlightSystemServer.csproj|c:\\users\\baljinnyam\\source\\repos\\flightsystem\\flightsystemserver\\controllers\\boardingpasscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5A34884-49DE-486C-9306-A8F7F7993691}|FlightSystemServer.csproj|solutionrelative:controllers\\boardingpasscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{30C4A9D1-6E49-4613-95D9-33B24037694F}|..\\FlightSystemWinForm\\FlightSystemWinForm.csproj|c:\\users\\baljinnyam\\source\\repos\\flightsystem\\flightsystemwinform\\flightentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{29D6AE4D-CCE0-47B7-8A3A-C02A1E816B9E}|..\\FlightSystemDatabase\\FlightSystemDatabase.csproj|c:\\users\\baljinnyam\\source\\repos\\flightsystem\\flightsystemdatabase\\repository\\boardingpassrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{30C4A9D1-6E49-4613-95D9-33B24037694F}|..\\FlightSystemWinForm\\FlightSystemWinForm.csproj|c:\\users\\baljinnyam\\source\\repos\\flightsystem\\flightsystemwinform\\flightpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{29D6AE4D-CCE0-47B7-8A3A-C02A1E816B9E}|..\\FlightSystemDatabase\\FlightSystemDatabase.csproj|c:\\users\\baljinnyam\\source\\repos\\flightsystem\\flightsystemdatabase\\dto\\mapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{30C4A9D1-6E49-4613-95D9-33B24037694F}|..\\FlightSystemWinForm\\FlightSystemWinForm.csproj|c:\\users\\baljinnyam\\source\\repos\\flightsystem\\flightsystemwinform\\flightpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{30C4A9D1-6E49-4613-95D9-33B24037694F}|..\\FlightSystemWinForm\\FlightSystemWinForm.csproj|c:\\users\\baljinnyam\\source\\repos\\flightsystem\\flightsystemwinform\\passengerpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FA3BCAC-3305-46BB-8617-2266F2E1CA3E}|..\\FlightSystemWebAppSA\\FlightSystemWebAppSA.csproj|c:\\users\\baljinnyam\\source\\repos\\flightsystem\\flightsystemwebappsa\\pages\\flight.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{30C4A9D1-6E49-4613-95D9-33B24037694F}|..\\FlightSystemWinForm\\FlightSystemWinForm.csproj|c:\\users\\baljinnyam\\source\\repos\\flightsystem\\flightsystemwinform\\passengerpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29D6AE4D-CCE0-47B7-8A3A-C02A1E816B9E}|..\\FlightSystemDatabase\\FlightSystemDatabase.csproj|c:\\users\\baljinnyam\\source\\repos\\flightsystem\\flightsystemdatabase\\dto\\boardingpassdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{30C4A9D1-6E49-4613-95D9-33B24037694F}|..\\FlightSystemWinForm\\FlightSystemWinForm.csproj|c:\\users\\baljinnyam\\source\\repos\\flightsystem\\flightsystemwinform\\passengerpage.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{30C4A9D1-6E49-4613-95D9-33B24037694F}|..\\FlightSystemWinForm\\FlightSystemWinForm.csproj|c:\\users\\baljinnyam\\source\\repos\\flightsystem\\flightsystemwinform\\seatsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{30C4A9D1-6E49-4613-95D9-33B24037694F}|..\\FlightSystemWinForm\\FlightSystemWinForm.csproj|c:\\users\\baljinnyam\\source\\repos\\flightsystem\\flightsystemwinform\\seatsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{29D6AE4D-CCE0-47B7-8A3A-C02A1E816B9E}|..\\FlightSystemDatabase\\FlightSystemDatabase.csproj|c:\\users\\baljinnyam\\source\\repos\\flightsystem\\flightsystemdatabase\\dto\\flightdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,139 +43,92 @@
               "RelativeDocumentMoniker": "..\\FlightSystemWinForm\\MainForm.cs",
               "ToolTip": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemWinForm\\MainForm.cs",
               "RelativeToolTip": "..\\FlightSystemWinForm\\MainForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMYAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIwAAAB7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T06:49:12.791Z",
+              "WhenOpened": "2025-05-23T10:57:44.93Z",
               "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CheckInController.cs",
+              "DocumentMoniker": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemServer\\Controllers\\CheckInController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CheckInController.cs",
+              "ToolTip": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemServer\\Controllers\\CheckInController.cs",
+              "RelativeToolTip": "Controllers\\CheckInController.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T10:55:15.294Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BoardingPassRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemDatabase\\Repository\\BoardingPassRepository.cs",
+              "RelativeDocumentMoniker": "..\\FlightSystemDatabase\\Repository\\BoardingPassRepository.cs",
+              "ToolTip": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemDatabase\\Repository\\BoardingPassRepository.cs",
+              "RelativeToolTip": "..\\FlightSystemDatabase\\Repository\\BoardingPassRepository.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAUwBgAAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T10:51:01.248Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "flightEntity.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemWinForm\\flightEntity.cs",
-              "RelativeDocumentMoniker": "..\\FlightSystemWinForm\\flightEntity.cs",
-              "ToolTip": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemWinForm\\flightEntity.cs [Design]",
-              "RelativeToolTip": "..\\FlightSystemWinForm\\flightEntity.cs [Design]",
+              "Title": "BoardingPassController.cs",
+              "DocumentMoniker": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemServer\\Controllers\\BoardingPassController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BoardingPassController.cs",
+              "ToolTip": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemServer\\Controllers\\BoardingPassController.cs",
+              "RelativeToolTip": "Controllers\\BoardingPassController.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T07:12:32.144Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "flightEntity.cs",
-              "DocumentMoniker": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemWinForm\\flightEntity.cs",
-              "RelativeDocumentMoniker": "..\\FlightSystemWinForm\\flightEntity.cs",
-              "ToolTip": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemWinForm\\flightEntity.cs",
-              "RelativeToolTip": "..\\FlightSystemWinForm\\flightEntity.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwCEAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T07:03:02.079Z",
+              "WhenOpened": "2025-05-23T10:50:55.879Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FlightPage.cs",
-              "DocumentMoniker": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemWinForm\\FlightPage.cs",
-              "RelativeDocumentMoniker": "..\\FlightSystemWinForm\\FlightPage.cs",
-              "ToolTip": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemWinForm\\FlightPage.cs",
-              "RelativeToolTip": "..\\FlightSystemWinForm\\FlightPage.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwBMAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T06:01:00.201Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "passengerEntity.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemWinForm\\passengerEntity.cs",
-              "RelativeDocumentMoniker": "..\\FlightSystemWinForm\\passengerEntity.cs",
-              "ToolTip": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemWinForm\\passengerEntity.cs [Design]",
-              "RelativeToolTip": "..\\FlightSystemWinForm\\passengerEntity.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T05:01:08.737Z",
-              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "MainForm.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemWinForm\\MainForm.cs",
-              "RelativeDocumentMoniker": "..\\FlightSystemWinForm\\MainForm.cs",
-              "ToolTip": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemWinForm\\MainForm.cs [Design]",
-              "RelativeToolTip": "..\\FlightSystemWinForm\\MainForm.cs [Design]",
+              "Title": "BoardingPassService.cs",
+              "DocumentMoniker": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemService\\Service\\BoardingPassService.cs",
+              "RelativeDocumentMoniker": "..\\FlightSystemService\\Service\\BoardingPassService.cs",
+              "ToolTip": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemService\\Service\\BoardingPassService.cs",
+              "RelativeToolTip": "..\\FlightSystemService\\Service\\BoardingPassService.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAcwDYAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T06:28:09.456Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-23T10:46:25.826Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Mapping.cs",
+              "DocumentMoniker": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemDatabase\\dto\\Mapping.cs",
+              "RelativeDocumentMoniker": "..\\FlightSystemDatabase\\dto\\Mapping.cs",
+              "ToolTip": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemDatabase\\dto\\Mapping.cs",
+              "RelativeToolTip": "..\\FlightSystemDatabase\\dto\\Mapping.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T10:49:58.407Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "FlightPage.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemWinForm\\FlightPage.cs",
-              "RelativeDocumentMoniker": "..\\FlightSystemWinForm\\FlightPage.cs",
-              "ToolTip": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemWinForm\\FlightPage.cs [Design]",
-              "RelativeToolTip": "..\\FlightSystemWinForm\\FlightPage.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T05:00:16.482Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PassengerPage.cs",
-              "DocumentMoniker": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemWinForm\\PassengerPage.cs",
-              "RelativeDocumentMoniker": "..\\FlightSystemWinForm\\PassengerPage.cs",
-              "ToolTip": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemWinForm\\PassengerPage.cs",
-              "RelativeToolTip": "..\\FlightSystemWinForm\\PassengerPage.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T05:51:37.754Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Flight.razor",
-              "DocumentMoniker": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemWebAppSA\\Pages\\Flight.razor",
-              "RelativeDocumentMoniker": "..\\FlightSystemWebAppSA\\Pages\\Flight.razor",
-              "ToolTip": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemWebAppSA\\Pages\\Flight.razor",
-              "RelativeToolTip": "..\\FlightSystemWebAppSA\\Pages\\Flight.razor",
+              "Title": "FlightDto.cs",
+              "DocumentMoniker": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemDatabase\\dto\\FlightDto.cs",
+              "RelativeDocumentMoniker": "..\\FlightSystemDatabase\\dto\\FlightDto.cs",
+              "ToolTip": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemDatabase\\dto\\FlightDto.cs",
+              "RelativeToolTip": "..\\FlightSystemDatabase\\dto\\FlightDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-23T06:01:55.313Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "PassengerPage.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemWinForm\\PassengerPage.cs",
-              "RelativeDocumentMoniker": "..\\FlightSystemWinForm\\PassengerPage.cs",
-              "ToolTip": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemWinForm\\PassengerPage.cs [Design]",
-              "RelativeToolTip": "..\\FlightSystemWinForm\\PassengerPage.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T05:00:56.562Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "BoardingPassDto.cs",
-              "DocumentMoniker": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemDatabase\\dto\\BoardingPassDto.cs",
-              "RelativeDocumentMoniker": "..\\FlightSystemDatabase\\dto\\BoardingPassDto.cs",
-              "ToolTip": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemDatabase\\dto\\BoardingPassDto.cs",
-              "RelativeToolTip": "..\\FlightSystemDatabase\\dto\\BoardingPassDto.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T05:40:32.789Z",
+              "WhenOpened": "2025-05-23T10:49:57.827Z",
               "EditorCaption": ""
             },
             {
@@ -202,29 +136,8 @@
               "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "PassengerPage.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemWinForm\\PassengerPage.Designer.cs",
-              "RelativeDocumentMoniker": "..\\FlightSystemWinForm\\PassengerPage.Designer.cs",
-              "ToolTip": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemWinForm\\PassengerPage.Designer.cs",
-              "RelativeToolTip": "..\\FlightSystemWinForm\\PassengerPage.Designer.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAowBUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T05:51:56.442Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "SeatsForm.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemWinForm\\SeatsForm.cs",
-              "RelativeDocumentMoniker": "..\\FlightSystemWinForm\\SeatsForm.cs",
-              "ToolTip": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemWinForm\\SeatsForm.cs [Design]",
-              "RelativeToolTip": "..\\FlightSystemWinForm\\SeatsForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T03:40:19.458Z",
-              "EditorCaption": " [Design]"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
             },
             {
               "$type": "Bookmark",
@@ -265,18 +178,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:4:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "SeatsForm.cs",
-              "DocumentMoniker": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemWinForm\\SeatsForm.cs",
-              "RelativeDocumentMoniker": "..\\FlightSystemWinForm\\SeatsForm.cs",
-              "ToolTip": "C:\\Users\\Baljinnyam\\source\\repos\\FlightSystem\\FlightSystemWinForm\\SeatsForm.cs",
-              "RelativeToolTip": "..\\FlightSystemWinForm\\SeatsForm.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB0AAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T06:01:58.898Z"
             }
           ]
         },

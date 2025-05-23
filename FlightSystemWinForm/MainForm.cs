@@ -80,6 +80,7 @@ namespace FlightSystemWinForm
                         FlightNumber = p.FlightId.ToString(),
                         SeatNumber = p.SeatId?.ToString() ?? "No seat",
                     };
+                    passengerControl.PrintBoardingPassBtn.Visible = p.SeatId == null ? false : true;
                     passengerControl.ChooseSeatButton.Tag = p;
                     passengerControl.ChooseSeatButton.Click += assignSeatBtn_Click;
                     passengerControl.Dock = DockStyle.Top;
@@ -117,9 +118,30 @@ namespace FlightSystemWinForm
 
                             if (dialog.ShowDialog() == DialogResult.OK)
                             {
+                                bool firstTimeBP = p.SeatId == null;
                                 await LoadPassengersAsync();
-                            }
+                                var pass = _passes.FirstOrDefault(ps => ps.Id == p.Id);
+                                if(pass != null && pass.SeatId != null)
+                                {
+                                    BoardingPassDto bpDto = new BoardingPassDto()
+                                    {
+                                        PassengerId = pass.Id,
+                                        SeatId = pass.SeatId,
+                                        FlightId = pass.FlightId,
+                                        IssuedAt = DateTime.UtcNow,
+                                    };
 
+                                    if (firstTimeBP)
+                                    {
+                                        var res = await _httpClient.PostAsJsonAsync($"api/boardingpasses", bpDto);
+
+                                    }
+                                    else
+                                    {
+                                        var res = await _httpClient.PutAsJsonAsync($"api/boardingpasses/{pass.Id}", bpDto);
+                                    }
+                                }
+                            }
                             _currentSeatsForm = null;
                         }
                         else
@@ -145,7 +167,7 @@ namespace FlightSystemWinForm
             _flights = await _httpClient.GetFromJsonAsync<List<FlightDto>>("api/flights");
             var flightsFlowPnl = flightPage1.flightFlowPanel;
             flightsFlowPnl.Controls.Clear();
-            foreach(var f in _flights)
+            foreach (var f in _flights)
             {
                 var flightControl = new flightEntity
                 {

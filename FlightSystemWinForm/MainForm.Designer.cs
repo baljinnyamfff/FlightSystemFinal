@@ -36,8 +36,8 @@
             showPassengersBtn = new Button();
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
-            flightPage1 = new FlightPage();
             passengerPage1 = new PassengerPage();
+            flightPage1 = new FlightPage();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
@@ -77,22 +77,32 @@
             // 
             // showFlightsBtn
             // 
+            showFlightsBtn.BackColor = Color.LightSkyBlue;
+            showFlightsBtn.FlatAppearance.BorderSize = 0;
+            showFlightsBtn.FlatStyle = FlatStyle.Flat;
+            showFlightsBtn.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             showFlightsBtn.Location = new Point(3, 280);
             showFlightsBtn.Name = "showFlightsBtn";
             showFlightsBtn.Size = new Size(205, 36);
             showFlightsBtn.TabIndex = 10;
             showFlightsBtn.Text = "Flights";
-            showFlightsBtn.UseVisualStyleBackColor = true;
+            showFlightsBtn.TextAlign = ContentAlignment.MiddleLeft;
+            showFlightsBtn.UseVisualStyleBackColor = false;
             showFlightsBtn.Click += showFlightsBtn_Click;
             // 
             // showPassengersBtn
             // 
+            showPassengersBtn.BackColor = Color.LightSkyBlue;
+            showPassengersBtn.FlatAppearance.BorderSize = 0;
+            showPassengersBtn.FlatStyle = FlatStyle.Flat;
+            showPassengersBtn.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             showPassengersBtn.Location = new Point(3, 238);
             showPassengersBtn.Name = "showPassengersBtn";
             showPassengersBtn.Size = new Size(205, 36);
             showPassengersBtn.TabIndex = 11;
             showPassengersBtn.Text = "Passengers";
-            showPassengersBtn.UseVisualStyleBackColor = true;
+            showPassengersBtn.TextAlign = ContentAlignment.MiddleLeft;
+            showPassengersBtn.UseVisualStyleBackColor = false;
             showPassengersBtn.Click += showPassengersBtn_Click;
             // 
             // pictureBox1
@@ -108,12 +118,21 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(flightPage1);
             panel1.Controls.Add(passengerPage1);
+            panel1.Controls.Add(flightPage1);
             panel1.Location = new Point(228, 12);
             panel1.Name = "panel1";
             panel1.Size = new Size(1204, 857);
             panel1.TabIndex = 10;
+            // 
+            // passengerPage1
+            // 
+            passengerPage1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            passengerPage1.Dock = DockStyle.Fill;
+            passengerPage1.Location = new Point(0, 0);
+            passengerPage1.Name = "passengerPage1";
+            passengerPage1.Size = new Size(1204, 857);
+            passengerPage1.TabIndex = 0;
             // 
             // flightPage1
             // 
@@ -123,24 +142,19 @@
             flightPage1.Size = new Size(1204, 857);
             flightPage1.TabIndex = 11;
             // 
-            // passengerPage1
-            // 
-            passengerPage1.Dock = DockStyle.Fill;
-            passengerPage1.Location = new Point(0, 0);
-            passengerPage1.Name = "passengerPage1";
-            passengerPage1.Size = new Size(1204, 857);
-            passengerPage1.TabIndex = 0;
-            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = SystemColors.Control;
             ClientSize = new Size(1444, 881);
             Controls.Add(panel1);
             Controls.Add(panel2);
             Controls.Add(_logTextBox);
             Name = "MainForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             panel2.ResumeLayout(false);
             panel2.PerformLayout();

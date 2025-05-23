@@ -34,15 +34,16 @@
             label3 = new Label();
             label2 = new Label();
             panel1 = new Panel();
+            flightFlowPnl = new Panel();
             flightSearchBox = new TextBox();
             label1 = new Label();
-            flightFlowPnl = new Panel();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
+            tableLayoutPanel1.BackColor = Color.LightSkyBlue;
             tableLayoutPanel1.ColumnCount = 5;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
@@ -118,6 +119,14 @@
             panel1.Size = new Size(1198, 757);
             panel1.TabIndex = 1;
             // 
+            // flightFlowPnl
+            // 
+            flightFlowPnl.Dock = DockStyle.Bottom;
+            flightFlowPnl.Location = new Point(0, 63);
+            flightFlowPnl.Name = "flightFlowPnl";
+            flightFlowPnl.Size = new Size(1198, 694);
+            flightFlowPnl.TabIndex = 1;
+            // 
             // flightSearchBox
             // 
             flightSearchBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -136,14 +145,6 @@
             label1.Size = new Size(267, 45);
             label1.TabIndex = 3;
             label1.Text = "Flight Information";
-            // 
-            // flightFlowPnl
-            // 
-            flightFlowPnl.Dock = DockStyle.Bottom;
-            flightFlowPnl.Location = new Point(0, 63);
-            flightFlowPnl.Name = "flightFlowPnl";
-            flightFlowPnl.Size = new Size(1198, 694);
-            flightFlowPnl.TabIndex = 1;
             // 
             // FlightPage
             // 
