@@ -57,15 +57,18 @@ builder.Services.AddCors(options =>
     });
 });
 
+builder.WebHost.ConfigureKestrel(serverOptions =>
+{
+    serverOptions.ListenAnyIP(5000);
+});
+
 builder.Services.AddSingleton<SocketWorker>();
 builder.Services.AddSingleton<ISocketWorker>(provider => provider.GetRequiredService<SocketWorker>());
 builder.Services.AddHostedService(provider => provider.GetRequiredService<SocketWorker>());
 
 builder.Logging.SetMinimumLevel(LogLevel.Debug);
 
-
 var app = builder.Build();
-
 
 app.UseRouting();
 
