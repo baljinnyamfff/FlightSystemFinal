@@ -15,18 +15,16 @@ namespace FlightSystemWinForm
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            var services = new ServiceCollection();
-            ConfigureServices(services);
 
-            using var serviceProvider = services.BuildServiceProvider();
-            var mainForm = serviceProvider.GetRequiredService<MainForm>();
-            Application.Run(mainForm);
-            //Application.Run(new MainForm());
-        }
-        private static void ConfigureServices(ServiceCollection services)
-        {
+            var services = new ServiceCollection();
+
             services.AddSingleton<SocketClientWorker>();
             services.AddSingleton<MainForm>();
+
+            using var serviceProvider = services.BuildServiceProvider();
+
+            var mainForm = serviceProvider.GetRequiredService<MainForm>();
+            Application.Run(mainForm);
         }
     }
 }

@@ -20,13 +20,19 @@ namespace FlightSystemService.Service
 
         public async Task<IEnumerable<BoardingPass>> GetAllBoardingPassesAsync()
         {
-             return await _boardingPassRepo.GetAllAsync();
+            return await _boardingPassRepo.GetAllAsync();
         }
            
 
         public async Task<BoardingPass> GetBoardingPassByIdAsync(int id)
         {
-             return await _boardingPassRepo.GetByIdAsync(id);
+            var bpasses = await _boardingPassRepo.GetAllAsync();
+            var bp = bpasses.FirstOrDefault(bp => bp.PassengerId == id);
+            if (bp == null)
+            {
+                return null;
+            }
+            return await _boardingPassRepo.GetByIdAsync(bp.Id);
         }
            
 

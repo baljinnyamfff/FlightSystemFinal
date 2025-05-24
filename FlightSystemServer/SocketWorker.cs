@@ -57,7 +57,6 @@ namespace FlightSystemServer
 
                 while (!stoppingToken.IsCancellationRequested)
                 {
-                    // Check if client is still connected
                     if (!IsClientConnected(client))
                     {
                         RemoveClient(client);

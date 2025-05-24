@@ -4,6 +4,8 @@ using System.Net.Sockets;
 using System.Runtime.InteropServices;
 using System.Text;
 using FlightSystemDatabase.dto;
+using System.Drawing.Printing;
+
 namespace FlightSystemWinForm
 {
     public partial class MainForm : Form
@@ -13,10 +15,16 @@ namespace FlightSystemWinForm
         private List<FlightDto> _flights;
         private List<PassengerDto> _passes;
         private SeatsForm? _currentSeatsForm;
+        private TextBox passengerSearchBox;
+        private TextBox flightSearchBox;
 
         public MainForm(SocketClientWorker socketClient)
         {
             InitializeComponent();
+            passengerSearchBox = passengerPage1.passengerSearchBox;
+            flightSearchBox = flightPage1.flightsSearchBox;
+            passengerSearchBox.TextChanged += passengerSearchBox_TextChanged;
+            flightSearchBox.TextChanged += flightSearchBox_TextChanged;
             _socketWorker = socketClient;
             _socketWorker.OnSeatReceived += HandleSeatAssignSocket;
             _socketWorker.OnFlightReceived += HandleFLightStatusSocket;
@@ -48,6 +56,7 @@ namespace FlightSystemWinForm
                 LogMessage("update seat called");
                 _currentSeatsForm.UpdateSeatStatus(seatId, true);
             }
+            LoadPassengersAsync();
         }
 
         private void LogMessage(string message)
@@ -80,9 +89,14 @@ namespace FlightSystemWinForm
                         FlightNumber = p.FlightId.ToString(),
                         SeatNumber = p.SeatId?.ToString() ?? "No seat",
                     };
-                    passengerControl.PrintBoardingPassBtn.Visible = p.SeatId == null ? false : true;
+
                     passengerControl.ChooseSeatButton.Tag = p;
                     passengerControl.ChooseSeatButton.Click += assignSeatBtn_Click;
+
+                    passengerControl.PrintBoardingPassBtn.Visible = p.SeatId == null ? false : true;
+                    passengerControl.PrintBoardingPassBtn.Tag = p.Id;
+                    passengerControl.PrintBoardingPassBtn.Click += printBoardingPassBtn_Click;
+
                     passengerControl.Dock = DockStyle.Top;
                     passengerFlowPnl.Controls.Add(passengerControl);
                 }
@@ -237,6 +251,125 @@ namespace FlightSystemWinForm
             catch (Exception ex)
             {
                 MessageBox.Show($"Error updating status: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private async void printBoardingPassBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (sender is Button btn && btn.Tag is int passId)
+                {
+                    var bpDto = await _httpClient.GetFromJsonAsync<BoardingPassDto>($"api/boardingpasses/{passId}");
+                    if (bpDto != null)
+                    {
+                        var flight = _flights.FirstOrDefault(f => f.Id == bpDto.FlightId);
+                        var passenger = _passes.FirstOrDefault(p => p.Id == bpDto.PassengerId);
+
+                        if (flight == null || passenger == null)
+                        {
+                            MessageBox.Show("Flight or Passenger info not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
+                        var seat = passenger.SeatId?.ToString() ?? "N/A";
+
+                        // Create content to print
+                        var boardingPassText = new StringBuilder();
+                        boardingPassText.AppendLine("BOARDING PASS");
+                        boardingPassText.AppendLine("----------------------------");
+                        boardingPassText.AppendLine($"Passenger Name: {passenger.Name}");
+                        boardingPassText.AppendLine($"Passport #: {passenger.PassportNumber}");
+                        boardingPassText.AppendLine($"Flight #: {flight.FlightNumber}");
+                        boardingPassText.AppendLine($"Destination: {flight.Destination}");
+                        boardingPassText.AppendLine($"Departure Time: {flight.DepartureTime}");
+                        boardingPassText.AppendLine($"Seat #: {seat}");
+                        boardingPassText.AppendLine($"Issued At: {bpDto.IssuedAt}");
+
+                        // Show a print preview or directly print
+                        PrintDocument printDoc = new PrintDocument();
+                        printDoc.PrintPage += (s, ev) =>
+                        {
+                            ev.Graphics.DrawString(boardingPassText.ToString(), new Font("Consolas", 12), Brushes.Black, 20, 20);
+                        };
+
+                        PrintDialog dlg = new PrintDialog();
+                        dlg.Document = printDoc;
+                        if (dlg.ShowDialog() == DialogResult.OK)
+                        {
+                            printDoc.Print();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Boarding pass not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error printing boarding pass: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void passengerSearchBox_TextChanged(object sender, EventArgs e)
+        {
+            string query = passengerSearchBox.Text.Trim().ToLower();
+            var passengerFlowPnl = passengerPage1.passengerFlowPanel;
+            passengerFlowPnl.Controls.Clear();
+
+            var filtered = _passes.Where(p =>
+                p.Name.ToLower().Contains(query) ||
+                p.PassportNumber.ToLower().Contains(query) ||
+                p.FlightId.ToString().Contains(query) ||
+                (p.SeatId?.ToString() ?? "").Contains(query)
+            ).ToList();
+
+            foreach (var p in filtered)
+            {
+                var passengerControl = new passengerEntity
+                {
+                    PassengerName = p.Name,
+                    PassportNumber = p.PassportNumber,
+                    FlightNumber = p.FlightId.ToString(),
+                    SeatNumber = p.SeatId?.ToString() ?? "No seat",
+                };
+
+                passengerControl.ChooseSeatButton.Tag = p;
+                passengerControl.ChooseSeatButton.Click += assignSeatBtn_Click;
+
+                passengerControl.PrintBoardingPassBtn.Visible = p.SeatId != null;
+                passengerControl.PrintBoardingPassBtn.Tag = p.Id;
+                passengerControl.PrintBoardingPassBtn.Click += printBoardingPassBtn_Click;
+
+                passengerControl.Dock = DockStyle.Top;
+                passengerFlowPnl.Controls.Add(passengerControl);
+            }
+        }
+        private void flightSearchBox_TextChanged(object sender, EventArgs e)
+        {
+            string query = flightSearchBox.Text.Trim().ToLower();
+            var flightsFlowPnl = flightPage1.flightFlowPanel;
+            flightsFlowPnl.Controls.Clear();
+
+            var filtered = _flights.Where(f =>
+                f.FlightNumber.ToLower().Contains(query) ||
+                f.Destination.ToLower().Contains(query) ||
+                f.Status.ToString().ToLower().Contains(query)
+            ).ToList();
+
+            foreach (var f in filtered)
+            {
+                var flightControl = new flightEntity
+                {
+                    FLightName = f.FlightNumber,
+                    FLightDestination = f.Destination,
+                    DepartureTime = f.DepartureTime.ToString(),
+                };
+                flightControl.statusComboBox.SelectedItem = f.Status.ToString();
+                flightControl.Tag = f;
+                flightControl.Dock = DockStyle.Top;
+                flightControl.ChangeStatusBtn.Tag = f.Status.ToString();
+                flightControl.ChangeStatusBtn.Click += changeStatusBtn_Click;
+                flightsFlowPnl.Controls.Add(flightControl);
             }
         }
 

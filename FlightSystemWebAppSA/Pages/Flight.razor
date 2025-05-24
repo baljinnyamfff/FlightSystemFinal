@@ -49,8 +49,6 @@
                         </tbody>
                     </table>
                 </div>
-
-                <button @onclick="Test" class="btn btn-warning mt-3">Test Status Change</button>
             }
         </div>
         <div class="card-footer">
@@ -88,7 +86,6 @@
     {
         try
         {
-            // Dispose existing connection if any
             if (hubConnection != null)
             {
                 await hubConnection.DisposeAsync();
@@ -99,9 +96,8 @@
                 {
                     options.SkipNegotiation = true;
                     options.Transports = Microsoft.AspNetCore.Http.Connections.HttpTransportType.WebSockets;
-                    options.Headers.Add("Access-Control-Allow-Origin", "*");
                 })
-                .WithAutomaticReconnect(new[] { TimeSpan.Zero, TimeSpan.FromSeconds(2), TimeSpan.FromSeconds(5), TimeSpan.FromSeconds(10) })
+                .WithAutomaticReconnect()
                 .ConfigureLogging(logging =>
                 {
                     logging.SetMinimumLevel(LogLevel.Information);
@@ -157,16 +153,16 @@
         }
     }
 
-    private async Task Test()
-    {
-        if (flights is { Count: > 0 })
-        {
-            var flight = flights.First();
-            flight.Status = "Boarding";
-            Logger.LogInformation("Local test: Changed status of Flight {FlightId} to Boarding", flight.Id);
-            await InvokeAsync(StateHasChanged);
-        }
-    }
+    // private async Task Test()
+    // {
+    //     if (flights is { Count: > 0 })
+    //     {
+    //         var flight = flights.First();
+    //         flight.Status = "Boarding";
+    //         Logger.LogInformation("Local test: Changed status of Flight {FlightId} to Boarding", flight.Id);
+    //         await InvokeAsync(StateHasChanged);
+    //     }
+    // }
 
     public async ValueTask DisposeAsync()
     {
